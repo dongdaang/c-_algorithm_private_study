@@ -1,12 +1,18 @@
 #include <iostream>
+#include <cstring>
 #include <string>
-#include <
+#include <sstream>
 
 using namespace std;
 
 int main(){
-    string s = "abc";
-    cout << s << endl;
-    int i = s.begin();
-    cout << i << endl;
+    // string s = "123 def ghi";
+    // string x, y, z;
+    // stringstream s2(s);
+    // s2 >> x >> y >> z;
+    // int b = x - '0';
+    string a = "123";
+    int b = stoi(a);
+
+    cout << b << endl;
 }
