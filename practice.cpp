@@ -1,18 +1,31 @@
 #include <iostream>
-#include <cstring>
-#include <string>
-#include <sstream>
+#include <unordered_set>
 
 using namespace std;
 
 int main(){
-    // string s = "123 def ghi";
-    // string x, y, z;
-    // stringstream s2(s);
-    // s2 >> x >> y >> z;
-    // int b = x - '0';
-    string a = "123";
-    int b = stoi(a);
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
 
-    cout << b << endl;
+    int T, N;
+    cin >> T;
+
+    for (int tc = 1; tc < T + 1; tc++){
+        cin >> N;
+        int cnt = 1;
+        unordered_set<char> num;
+        while(1){
+            int temp = N;
+            if (num.size() == 10){
+                break;
+            }
+            temp = N * cnt;
+            string _N = to_string(N);
+            for (int i = 0; i < _N.size(); i++){
+                num.insert(_N[i]);
+            }
+        }
+        cout << "#" << tc << " " << cnt << endl;
+    }
 }

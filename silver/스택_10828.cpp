@@ -2,6 +2,7 @@
 #include <stack>
 #include <sstream>
 #include <string>
+#include <typeinfo>
 
 using namespace std;
 
@@ -16,41 +17,38 @@ int main(){
     cin >> N;
     while(N--){
         string s;
+        int num;
         cin >> s;
-        if (s[0] == 'p' && s[1] == 'u'){
-            string x, y;
-            stringstream temp(s);
-            temp >> x >> y;
-            int num = stoi(y);
+        if (s == "push"){
+            cin >> num;
             st.push(num);
         }
-        else if (s[0] == 'p'){
+        else if (s == "pop"){
             if (st.empty()){
-                cout << -1;
+                cout << -1 << endl;
             }
             else{
+                cout << st.top() << endl;
                 st.pop();
-                cout << st.top();
             }
         }
-        else if (s[0] == 's'){
-            int num;
-            cout << st.size();
+        else if (s == "size"){
+            cout << st.size() << endl;
         }
-        else if (s[0] == 'e'){
+        else if (s == "empty"){
             if (st.empty()){
-                cout << 1;
+                cout << 1 << endl;
             }
             else{
-                cout << 0;
+                cout << 0 << endl;
             }
         }
         else{
             if (st.empty()){
-                cout << -1;
+                cout << -1 << endl;
             }
             else{
-                cout << st.top();
+                cout << st.top() << endl;
             }
         }
     }
